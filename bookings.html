@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Services - Fafali Group</title>
+    <meta name="description" content="Book hotels, flights, tours, and events with Fafali Group. Professional booking services with competitive rates and excellent customer support.">
+    <meta name="keywords" content="hotel booking, flight booking, tour booking, event booking, travel reservations, accommodation">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="fafalilogo.JPG" alt="Fafali Group" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link active">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html" class="active">Bookings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in-up">Booking Services</h1>
+            <p class="page-subtitle fade-in-up delay-1">Complete travel booking solutions for your perfect journey</p>
+        </div>
+    </section>
+
+    <!-- Booking Services Overview -->
+    <section class="booking-services-overview">
+        <div class="container">
+            <div class="booking-intro fade-in-up">
+                <h2>Your One-Stop Travel Booking Solution</h2>
+                <p>From luxury hotels to budget-friendly accommodations, flight bookings to curated tours, and corporate events to special occasions - we handle all your travel booking needs with competitive rates and personalized service.</p>
+            </div>
+
+            <div class="booking-services-grid">
+                <!-- Hotel Booking -->
+                <div class="booking-service-card fade-in-up" data-service="hotel">
+                    <div class="booking-service-header">
+                        <div class="booking-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Hotel Booking</h3>
+                        <p>Find and reserve the perfect accommodation for your stay</p>
+                    </div>
+                    <div class="booking-service-features">
+                        <ul>
+                            <li><i class="fas fa-star"></i> Luxury & premium hotels</li>
+                            <li><i class="fas fa-briefcase"></i> Business hotels</li>
+                            <li><i class="fas fa-heart"></i> Boutique properties</li>
+                            <li><i class="fas fa-wallet"></i> Budget-friendly options</li>
+                            <li><i class="fas fa-wifi"></i> Amenity verification</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary booking-toggle" data-target="hotelForm">Book Hotel</button>
+                </div>
+
+                <!-- Flight Booking -->
+                <div class="booking-service-card fade-in-up delay-1" data-service="flight">
+                    <div class="booking-service-header">
+                        <div class="booking-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Flight Booking</h3>
+                        <p>Competitive airfare with flexible options for all destinations</p>
+                    </div>
+                    <div class="booking-service-features">
+                        <ul>
+                            <li><i class="fas fa-globe"></i> Domestic & international</li>
+                            <li><i class="fas fa-crown"></i> Business class options</li>
+                            <li><i class="fas fa-clock"></i> Last-minute bookings</li>
+                            <li><i class="fas fa-exchange-alt"></i> Flexible changes</li>
+                            <li><i class="fas fa-tags"></i> Best price guarantee</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary booking-toggle" data-target="flightForm">Book Flight</button>
+                </div>
+
+                <!-- Tour Booking -->
+                <div class="booking-service-card fade-in-up delay-2" data-service="tour">
+                    <div class="booking-service-header">
+                        <div class="booking-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Tour Booking</h3>
+                        <p>Curated tour experiences and guided adventures worldwide</p>
+                    </div>
+                    <div class="booking-service-features">
+                        <ul>
+                            <li><i class="fas fa-city"></i> City tours</li>
+                            <li><i class="fas fa-landmark"></i> Cultural experiences</li>
+                            <li><i class="fas fa-mountain"></i> Adventure tours</li>
+                            <li><i class="fas fa-route"></i> Custom itineraries</li>
+                            <li><i class="fas fa-users"></i> Group packages</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary booking-toggle" data-target="tourForm">Book Tour</button>
+                </div>
+
+                <!-- Events Booking -->
+                <div class="booking-service-card fade-in-up delay-3" data-service="event">
+                    <div class="booking-service-header">
+                        <div class="booking-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Events Booking</h3>
+                        <p>Professional event planning and booking services</p>
+                    </div>
+                    <div class="booking-service-features">
+                        <ul>
+                            <li><i class="fas fa-building"></i> Corporate events</li>
+                            <li><i class="fas fa-microphone"></i> Conferences</li>
+                            <li><i class="fas fa-ring"></i> Weddings</li>
+                            <li><i class="fas fa-birthday-cake"></i> Special occasions</li>
+                            <li><i class="fas fa-cogs"></i> Full planning service</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary booking-toggle" data-target="eventForm">Book Event</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Forms Section -->
+    <section class="booking-forms-section">
+        <div class="container">
+            <!-- Hotel Booking Form -->
+            <div class="booking-form-wrapper" id="hotelForm" style="display: none;">
+                <form class="booking-form" id="hotelBookingForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-hotel"></i> Hotel Booking Request</h3>
+                        <p>Fill out the form below and we'll contact you with the best options</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Guest Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="hotelGuestName">Full Name *</label>
+                                    <input type="text" id="hotelGuestName" name="guestName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotelGuestEmail">Email *</label>
+                                    <input type="email" id="hotelGuestEmail" name="guestEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="hotelGuestPhone">Phone Number *</label>
+                                    <input type="tel" id="hotelGuestPhone" name="guestPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotelGuests">Number of Guests *</label>
+                                    <select id="hotelGuests" name="guests" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5+">5+ Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Stay Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="hotelDestination">Destination *</label>
+                                    <input type="text" id="hotelDestination" name="destination" placeholder="City, Country" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotelCheckIn">Check-in Date *</label>
+                                    <input type="date" id="hotelCheckIn" name="checkIn" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="hotelCheckOut">Check-out Date *</label>
+                                    <input type="date" id="hotelCheckOut" name="checkOut" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotelBudget">Budget Range</label>
+                                    <select id="hotelBudget" name="budget">
+                                        <option value="">Select Budget</option>
+                                        <option value="budget">Budget (₵750-1,500/night)</option>
+                                        <option value="mid-range">Mid-range (₵1,500-3,000/night)</option>
+                                        <option value="luxury">Luxury (₵3,000-7,500/night)</option>
+                                        <option value="premium">Premium (₵7,500+/night)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelPreferences">Special Preferences</label>
+                                <textarea id="hotelPreferences" name="preferences" rows="3" placeholder="Any special requirements, preferences, or notes..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Hotel Request</button>
+                        <button type="button" class="btn btn-secondary close-form" data-target="hotelForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Flight Booking Form -->
+            <div class="booking-form-wrapper" id="flightForm" style="display: none;">
+                <form class="booking-form" id="flightBookingForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-plane"></i> Flight Booking Request</h3>
+                        <p>Get the best flight deals with our booking service</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Passenger Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="flightPassengerName">Full Name *</label>
+                                    <input type="text" id="flightPassengerName" name="passengerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightPassengerEmail">Email *</label>
+                                    <input type="email" id="flightPassengerEmail" name="passengerEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="flightPassengerPhone">Phone Number *</label>
+                                    <input type="tel" id="flightPassengerPhone" name="passengerPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightPassengers">Number of Passengers *</label>
+                                    <select id="flightPassengers" name="passengers" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4">4 Passengers</option>
+                                        <option value="5+">5+ Passengers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Flight Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="flightFrom">From *</label>
+                                    <input type="text" id="flightFrom" name="from" placeholder="Departure city/airport" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightTo">To *</label>
+                                    <input type="text" id="flightTo" name="to" placeholder="Destination city/airport" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="flightDeparture">Departure Date *</label>
+                                    <input type="date" id="flightDeparture" name="departure" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightReturn">Return Date (if round trip)</label>
+                                    <input type="date" id="flightReturn" name="return">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="flightClass">Class Preference</label>
+                                    <select id="flightClass" name="class">
+                                        <option value="">Select Class</option>
+                                        <option value="economy">Economy</option>
+                                        <option value="premium-economy">Premium Economy</option>
+                                        <option value="business">Business</option>
+                                        <option value="first">First Class</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flightFlexibility">Date Flexibility</label>
+                                    <select id="flightFlexibility" name="flexibility">
+                                        <option value="">Select Flexibility</option>
+                                        <option value="exact">Exact dates</option>
+                                        <option value="flexible-1">±1 day</option>
+                                        <option value="flexible-3">±3 days</option>
+                                        <option value="flexible-7">±1 week</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Flight Request</button>
+                        <button type="button" class="btn btn-secondary close-form" data-target="flightForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tour Booking Form -->
+            <div class="booking-form-wrapper" id="tourForm" style="display: none;">
+                <form class="booking-form" id="tourBookingForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-map-marked-alt"></i> Tour Booking Request</h3>
+                        <p>Discover amazing destinations with our curated tour packages</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Traveler Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tourTravelerName">Full Name *</label>
+                                    <input type="text" id="tourTravelerName" name="travelerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tourTravelerEmail">Email *</label>
+                                    <input type="email" id="tourTravelerEmail" name="travelerEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tourTravelerPhone">Phone Number *</label>
+                                    <input type="tel" id="tourTravelerPhone" name="travelerPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tourGroupSize">Group Size *</label>
+                                    <select id="tourGroupSize" name="groupSize" required>
+                                        <option value="">Select</option>
+                                        <option value="1">Solo traveler</option>
+                                        <option value="2">Couple</option>
+                                        <option value="3-5">Small group (3-5)</option>
+                                        <option value="6-10">Medium group (6-10)</option>
+                                        <option value="10+">Large group (10+)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Tour Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tourDestination">Destination *</label>
+                                    <select id="tourDestination" name="destination" required>
+                                        <option value="">Select Destination</option>
+                                        <option value="local">Local Tours (Ghana)</option>
+                                        <option value="west-africa">West Africa</option>
+                                        <option value="east-africa">East Africa</option>
+                                        <option value="europe">Europe</option>
+                                        <option value="middle-east">Middle East</option>
+                                        <option value="asia">Asia</option>
+                                        <option value="americas">Americas</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tourType">Tour Type *</label>
+                                    <select id="tourType" name="tourType" required>
+                                        <option value="">Select Tour Type</option>
+                                        <option value="cultural">Cultural Tours</option>
+                                        <option value="adventure">Adventure Tours</option>
+                                        <option value="historical">Historical Tours</option>
+                                        <option value="nature">Nature & Wildlife</option>
+                                        <option value="city">City Tours</option>
+                                        <option value="beach">Beach & Relaxation</option>
+                                        <option value="custom">Custom Itinerary</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tourStartDate">Preferred Start Date *</label>
+                                    <input type="date" id="tourStartDate" name="startDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tourDuration">Duration *</label>
+                                    <select id="tourDuration" name="duration" required>
+                                        <option value="">Select Duration</option>
+                                        <option value="day-tour">Day Tour (1 day)</option>
+                                        <option value="2-3-days">2-3 Days</option>
+                                        <option value="weekend">Weekend (2-3 days)</option>
+                                        <option value="week">Week (5-7 days)</option>
+                                        <option value="extended">Extended (8+ days)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tourInterests">Special Interests</label>
+                                <textarea id="tourInterests" name="interests" rows="3" placeholder="What interests you most? Any specific activities, sites, or experiences you'd like to include..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Tour Request</button>
+                        <button type="button" class="btn btn-secondary close-form" data-target="tourForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Events Booking Form -->
+            <div class="booking-form-wrapper" id="eventForm" style="display: none;">
+                <form class="booking-form" id="eventBookingForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-calendar-check"></i> Event Booking Request</h3>
+                        <p>Professional event planning and booking services for all occasions</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Organizer Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventOrganizerName">Full Name *</label>
+                                    <input type="text" id="eventOrganizerName" name="organizerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventOrganizerEmail">Email *</label>
+                                    <input type="email" id="eventOrganizerEmail" name="organizerEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventOrganizerPhone">Phone Number *</label>
+                                    <input type="tel" id="eventOrganizerPhone" name="organizerPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventCompany">Company/Organization</label>
+                                    <input type="text" id="eventCompany" name="company" placeholder="Company name (optional)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Event Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventType">Event Type *</label>
+                                    <select id="eventType" name="eventType" required>
+                                        <option value="">Select Event Type</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="conference">Conference</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="birthday">Birthday Party</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="product-launch">Product Launch</option>
+                                        <option value="workshop">Workshop/Seminar</option>
+                                        <option value="networking">Networking Event</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventAttendees">Expected Attendees *</label>
+                                    <select id="eventAttendees" name="attendees" required>
+                                        <option value="">Select Size</option>
+                                        <option value="1-25">Small (1-25 people)</option>
+                                        <option value="26-50">Medium (26-50 people)</option>
+                                        <option value="51-100">Large (51-100 people)</option>
+                                        <option value="101-200">Very Large (101-200 people)</option>
+                                        <option value="200+">Massive (200+ people)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventDate">Event Date *</label>
+                                    <input type="date" id="eventDate" name="eventDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventDuration">Duration *</label>
+                                    <select id="eventDuration" name="duration" required>
+                                        <option value="">Select Duration</option>
+                                        <option value="2-hours">2 hours</option>
+                                        <option value="half-day">Half day (4 hours)</option>
+                                        <option value="full-day">Full day (8 hours)</option>
+                                        <option value="weekend">Weekend</option>
+                                        <option value="multi-day">Multi-day</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventLocation">Preferred Location *</label>
+                                <input type="text" id="eventLocation" name="location" placeholder="City, Venue preferences" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventRequirements">Event Requirements</label>
+                                <textarea id="eventRequirements" name="requirements" rows="4" placeholder="Describe your event needs, special requirements, catering, audio/visual needs, etc..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Event Request</button>
+                        <button type="button" class="btn btn-secondary close-form" data-target="eventForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Booking Services -->
+    <section class="booking-advantages">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Why Choose Our Booking Services</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item fade-in-up">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive rates with price matching guarantee and exclusive deals from our trusted partners.</p>
+                </div>
+                <div class="advantage-item fade-in-up delay-1">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for booking modifications, changes, and emergency assistance.</p>
+                </div>
+                <div class="advantage-item fade-in-up delay-2">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Booking</h3>
+                    <p>Safe and secure payment processing with full protection and satisfaction guarantee.</p>
+                </div>
+                <div class="advantage-item fade-in-up delay-3">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Instant Confirmation</h3>
+                    <p>Quick booking confirmations and immediate itinerary updates for peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in-up">
+                <h2>Ready to Book Your Next Adventure?</h2>
+                <p>Contact us now for personalized booking assistance and the best deals on your travel needs.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+2330593624776" class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i> Call for Instant Booking
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">Contact Us</a>
+                    <a href="https://wa.me/971556657953" class="btn btn-outline btn-large">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/fafalilogo.PNG" alt="Fafali Group" class="logo">
+                    </div>
+                    <p>Your trusted partner for global travel, visa, and events solutions.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@fafaligroup?si=K5cLnhZqKNfJKLKd" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@fafaligroup?_r=1&_t=ZM-92fNuJu1YPA" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/fafali-group/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/fafali_group?igsh=MTlsYjhjaTBwMjU5ZQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Hotel Booking</a></li>
+                        <li><a href="bookings.html">Flight Booking</a></li>
+                        <li><a href="bookings.html">Tour Booking</a></li>
+                        <li><a href="bookings.html">Events Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ghana & UAE Locations</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+233(0)593624776</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fafaligroup.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/971556657953">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a> |
+                    <a href="terms-conditions.html">Terms & Conditions</a> |
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Fafali Group. All rights reserved.</p>
+                </div>
+                <div class="footer-developer">
+                    <p>Developed by Dromor Narh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Booking form toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingToggles = document.querySelectorAll('.booking-toggle');
+            const closeButtons = document.querySelectorAll('.close-form');
+
+            // Toggle booking forms
+            bookingToggles.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetForm = this.getAttribute('data-target');
+                    const formWrapper = document.getElementById(targetForm);
+                    
+                    // Hide all other forms
+                    document.querySelectorAll('.booking-form-wrapper').forEach(wrapper => {
+                        if (wrapper.id !== targetForm) {
+                            wrapper.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide target form
+                    if (formWrapper.style.display === 'none' || !formWrapper.style.display) {
+                        formWrapper.style.display = 'block';
+                        formWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        formWrapper.style.display = 'none';
+                    }
+                });
+            });
+
+            // Close form buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetForm = this.getAttribute('data-target');
+                    const formWrapper = document.getElementById(targetForm);
+                    formWrapper.style.display = 'none';
+                });
+            });
+
+            // Form submission handlers
+            const forms = document.querySelectorAll('.booking-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Show success message
+                    alert('Thank you for your booking request! We will contact you within 24 hours with the best options.');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Hide form
+                    this.closest('.booking-form-wrapper').style.display = 'none';
+                });
+            });
+
+            // Auto-hide form after submission
+            function hideForm(formId) {
+                const formWrapper = document.getElementById(formId);
+                if (formWrapper) {
+                    setTimeout(() => {
+                        formWrapper.style.display = 'none';
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

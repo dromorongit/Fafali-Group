@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Fafali Group</title>
+    <meta name="description" content="Explore our photo gallery showcasing office environments, team photos, travel destinations, events, and company activities at Fafali Group.">
+    <meta name="keywords" content="photo gallery, travel photos, office photos, team photos, events, company gallery">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="fafalilogo.JPG" alt="Fafali Group" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Bookings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in-up">Our Gallery</h1>
+            <p class="page-subtitle fade-in-up delay-1">Capturing moments and experiences that define our journey</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons fade-in-up">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="office">Office & Team</button>
+                <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="destinations">Destinations</button>
+                <button class="filter-btn" data-filter="videos">Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="team-gallery-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Meet Our Team</h2>
+            <p class="section-subtitle fade-in-up delay-1">The faces behind Fafali Group's exceptional service</p>
+            <div class="team-gallery-grid">
+                <!-- CEO -->
+                <div class="team-member-card fade-in-up ceo-prominent">
+                    <div class="member-image">
+                        <img src="Ceo.JPG" alt="Mercy Fafali Tsadidey - Chief Executive Officer" class="member-photo ceo-large">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email CEO">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Mercy Fafali Tsadidey</h4>
+                        <h5>Chief Executive Officer</h5>
+                        <p class="member-role">Travel Industry Expert • 15+ Years Experience</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 1 -->
+                <div class="team-member-card fade-in-up delay-1">
+                    <div class="member-image">
+                        <img src="fgpa.JPG" alt="Rachael Akumolgo" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Rachael">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Rachael Akumolgo</h4>
+                        <p class="member-role">Personal Assistant</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 2 -->
+                <div class="team-member-card fade-in-up delay-2">
+                    <div class="member-image">
+                        <img src="stephanie.JPG" alt="Stephanie Appiah" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Stephanie">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Stephanie Appiah</h4>
+                        <p class="member-role">HR Executive</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 3 -->
+                <div class="team-member-card fade-in-up delay-3">
+                    <div class="member-image">
+                        <img src="stephen.JPG" alt="Stephen Oppong" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Stephen">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Stephen Oppong</h4>
+                        <p class="member-role">IT & System Security Officer</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 4 -->
+                <div class="team-member-card fade-in-up delay-4">
+                    <div class="member-image">
+                        <img src="michael.JPG" alt="Michael Mensah" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Michael">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Michael Mensah</h4>
+                        <p class="member-role">Graphics Designer/Marketing</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 5 -->
+                <div class="team-member-card fade-in-up delay-5">
+                    <div class="member-image">
+                        <img src="theodosia.JPG" alt="Theodocia Agbovie" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Theodocia">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Theodocia Agbovie</h4>
+                        <p class="member-role">Digital Content Marketing Executive</p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 6 -->
+                <div class="team-member-card fade-in-up">
+                    <div class="member-image">
+                        <img src="irene.JPG" alt="Miss Irene Millogo" class="member-photo">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="mailto:info@fafaligroup.org" class="social-link email" aria-label="Email Irene">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/fafali-group"/" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Miss Irene Millogo</h4>
+                        <p class="member-role">Sales & Marketing Executive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Office & Team Photos -->
+                <div class="gallery-item office fade-in-up" data-category="office">
+                    <img src="assets/images/office-1.jpg" alt="Modern Office Environment" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Modern Office</h4>
+                            <p>Comfortable workspace for consultations</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/office-1.jpg" data-title="Modern Office Environment">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item office fade-in-up delay-1" data-category="office">
+                    <img src="assets/images/team-meeting.jpg" alt="Team Meeting" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Team Collaboration</h4>
+                            <p>Planning client services together</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/team-meeting.jpg" data-title="Team Collaboration Meeting">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item office fade-in-up delay-2" data-category="office">
+                    <img src="assets/images/reception-area.jpg" alt="Reception Area" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Reception Area</h4>
+                            <p>Welcoming space for clients</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/reception-area.jpg" data-title="Comfortable Reception Area">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item office fade-in-up delay-3" data-category="office">
+                    <img src="fgteam.JPG" alt="Fafali Group Team Photo" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Fafali Group Team</h4>
+                            <p>Our dedicated team working together</p>
+                        </div>
+                        <button class="view-btn" data-src="fgteam.JPG" data-title="Fafali Group Team Photo">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Travel & Tourism Photos -->
+                <div class="gallery-item travel fade-in-up delay-3" data-category="travel">
+                    <img src="assets/images/travel-1.jpg" alt="Beautiful Beach Destination" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Beach Paradise</h4>
+                            <p>One of our popular travel destinations</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/travel-1.jpg" data-title="Beautiful Beach Destination">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item travel fade-in-up delay-4" data-category="travel">
+                    <img src="assets/images/travel-2.jpg" alt="Mountain Adventure" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Mountain Adventure</h4>
+                            <p>Adventure tours we organize</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/travel-2.jpg" data-title="Mountain Adventure Tour">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item travel fade-in-up delay-5" data-category="travel">
+                    <img src="assets/images/cultural-site.jpg" alt="Cultural Heritage Site" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Cultural Heritage</h4>
+                            <p>Historical sites and cultural experiences</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/cultural-site.jpg" data-title="Cultural Heritage Site">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Events Photos -->
+                <div class="gallery-item events fade-in-up" data-category="events">
+                    <img src="assets/images/event-1.jpg" alt="Corporate Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Corporate Event</h4>
+                            <p>Professional event planning service</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/event-1.jpg" data-title="Corporate Event Planning">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item events fade-in-up delay-1" data-category="events">
+                    <img src="assets/images/conference.jpg" alt="Conference Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Conference Setup</h4>
+                            <p>Complete conference planning and execution</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/conference.jpg" data-title="Professional Conference Event">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item events fade-in-up delay-2" data-category="events">
+                    <img src="assets/images/wedding-event.jpg" alt="Wedding Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Wedding Celebration</h4>
+                            <p>Special occasions and wedding planning</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/wedding-event.jpg" data-title="Wedding Event Planning">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Destinations -->
+                <div class="gallery-item destinations fade-in-up delay-3" data-category="destinations">
+                    <img src="assets/images/destination-1.jpg" alt="Historic City" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Historic City</h4>
+                            <p>Ancient architecture and culture</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/destination-1.jpg" data-title="Historic City Destination">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations fade-in-up delay-4" data-category="destinations">
+                    <img src="assets/images/destination-2.jpg" alt="Modern City Skyline" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Modern Metropolis</h4>
+                            <p>Urban adventures and city tours</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/destination-2.jpg" data-title="Modern City Skyline">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations fade-in-up delay-5" data-category="destinations">
+                    <img src="assets/images/destination-3.jpg" alt="Natural Landscape" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Natural Beauty</h4>
+                            <p>Pristine landscapes and nature tours</p>
+                        </div>
+                        <button class="view-btn" data-src="assets/images/destination-3.jpg" data-title="Natural Landscape">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Videos Section -->
+                <div class="gallery-item videos fade-in-up" data-category="videos">
+                    <div class="video-item">
+                        <video controls poster="fafalilogo.JPG" class="gallery-video">
+                            <source src="fafaligroupad.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="gallery-info">
+                                <h4>Fafali Group Promotional Video</h4>
+                                <p>Discover our company and services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item videos fade-in-up delay-1" data-category="videos">
+                    <div class="video-item">
+                        <video controls poster="assets/images/video-poster-2.jpg" class="gallery-video">
+                            <source src="assets/videos/travel-highlights.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="gallery-info">
+                                <h4>Travel Highlights</h4>
+                                <p>Amazing destinations we've visited</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item videos fade-in-up delay-2" data-category="videos">
+                    <div class="video-item">
+                        <video controls poster="assets/images/video-poster-3.jpg" class="gallery-video">
+                            <source src="assets/videos/event-highlights.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="gallery-info">
+                                <h4>Event Highlights</h4>
+                                <p>Memorable events we've organized</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-controls">
+                <button class="lightbox-nav prev" id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-nav next" id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="lightbox-close" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in-up">
+                <h2>Inspired by What You've Seen?</h2>
+                <p>Let us help you create your own amazing travel and event experiences.</p>
+                <div class="cta-buttons">
+                    <a href="services.html" class="btn btn-primary btn-large">Explore Services</a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/fafalilogo.PNG" alt="Fafali Group" class="logo">
+                    </div>
+                    <p>Your trusted partner for global travel, visa, and events solutions.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@fafaligroup?si=K5cLnhZqKNfJKLKd" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@fafaligroup?_r=1&_t=ZM-92fNuJu1YPA" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/fafali-group/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/fafali_group?igsh=MTlsYjhjaTBwMjU5ZQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Hotel Booking</a></li>
+                        <li><a href="bookings.html">Flight Booking</a></li>
+                        <li><a href="bookings.html">Tour Booking</a></li>
+                        <li><a href="bookings.html">Events Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ghana & UAE Locations</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+233(0)593624776</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fafaligroup.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/971556657953">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a> |
+                    <a href="terms-conditions.html">Terms & Conditions</a> |
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Fafali Group. All rights reserved.</p>
+                </div>
+                <div class="footer-developer">
+                    <p>Developed by Dromor Narh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hidden');
+                            item.classList.add('visible');
+                        } else {
+                            item.classList.remove('visible');
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDescription = document.getElementById('lightbox-description');
+            const closeBtn = document.getElementById('close-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const viewButtons = document.querySelectorAll('.view-btn');
+            
+            let currentImageIndex = 0;
+            let visibleImages = [];
+
+            // Get visible images for navigation
+            function updateVisibleImages() {
+                visibleImages = Array.from(galleryItems)
+                    .filter(item => item.classList.contains('visible'))
+                    .filter(item => item.hasAttribute('data-category'));
+            }
+
+            // Open lightbox
+            function openLightbox(index) {
+                updateVisibleImages();
+                if (visibleImages.length === 0) return;
+                
+                currentImageIndex = index;
+                const item = visibleImages[currentImageIndex];
+                const img = item.querySelector('.gallery-image');
+                const title = item.querySelector('.gallery-info h4').textContent;
+                const description = item.querySelector('.gallery-info p').textContent;
+                
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightboxTitle.textContent = title;
+                lightboxDescription.textContent = description;
+                
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Announce to screen readers
+                announce('Image opened in lightbox');
+            }
+
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                announce('Lightbox closed');
+            }
+
+            // Navigate to previous image
+            function previousImage() {
+                currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+                const item = visibleImages[currentImageIndex];
+                const img = item.querySelector('.gallery-image');
+                const title = item.querySelector('.gallery-info h4').textContent;
+                const description = item.querySelector('.gallery-info p').textContent;
+                
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightboxTitle.textContent = title;
+                lightboxDescription.textContent = description;
+            }
+
+            // Navigate to next image
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+                const item = visibleImages[currentImageIndex];
+                const img = item.querySelector('.gallery-image');
+                const title = item.querySelector('.gallery-info h4').textContent;
+                const description = item.querySelector('.gallery-info p').textContent;
+                
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightboxTitle.textContent = title;
+                lightboxDescription.textContent = description;
+            }
+
+            // Event listeners for view buttons
+            viewButtons.forEach((button, index) => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    updateVisibleImages();
+                    const visibleIndex = Array.from(galleryItems)
+                        .filter(item => item.classList.contains('visible'))
+                        .indexOf(button.closest('.gallery-item'));
+                    openLightbox(visibleIndex);
+                });
+            });
+
+            // Event listeners for lightbox controls
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', previousImage);
+            nextBtn.addEventListener('click', nextImage);
+
+            // Close lightbox when clicking outside image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('active')) {
+                    switch(e.key) {
+                        case 'Escape':
+                            closeLightbox();
+                            break;
+                        case 'ArrowLeft':
+                            previousImage();
+                            break;
+                        case 'ArrowRight':
+                            nextImage();
+                            break;
+                    }
+                }
+            });
+
+            // Update visible images when filter changes
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    setTimeout(updateVisibleImages, 300);
+                });
+            });
+
+            // Initialize
+            updateVisibleImages();
+        });
+    </script>
+</body>
+</html>

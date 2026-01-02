@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Fafali Group</title>
+    <meta name="description" content="Create your Fafali Group account to access personalized travel services, track applications, and manage bookings.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6/css/all.min.css.4.0">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="fafalilogo.JPG" alt="Fafali Group" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Bookings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item auth-nav">
+                    <a href="signin.html" class="nav-link">Sign In</a>
+                </li>
+                <li class="nav-item auth-nav">
+                    <a href="signup.html" class="nav-link active btn btn-primary">Sign Up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1 class="auth-title">Create Your Account</h1>
+                        <p class="auth-subtitle">Join Fafali Group for personalized travel services</p>
+                    </div>
+
+                    <form class="auth-form" id="signupForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="error-message" id="firstNameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Enter your last name" required>
+                                </div>
+                                <div class="error-message" id="lastNameError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                            </div>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-group">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="error-message" id="phoneError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm your password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="confirmPasswordError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" class="form-input" required>
+                                <option value="">Select your country</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-message" id="countryError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="terms-conditions.html" target="_blank" class="auth-link">Terms & Conditions</a> and <a href="privacy-policy.html" target="_blank" class="auth-link">Privacy Policy</a></label>
+                            </div>
+                            <div class="error-message" id="termsError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter for travel deals and updates</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="signin.html" class="auth-link">Sign in here</a></p>
+                    </div>
+                </div>
+
+                <div class="auth-benefits">
+                    <h3>Why Create an Account?</h3>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Track visa applications in real-time</li>
+                        <li><i class="fas fa-check-circle"></i> Manage all your bookings in one place</li>
+                        <li><i class="fas fa-check-circle"></i> Update personal information anytime</li>
+                        <li><i class="fas fa-check-circle"></i> Receive exclusive travel deals and offers</li>
+                        <li><i class="fas fa-check-circle"></i> Get personalized travel recommendations</li>
+                        <li><i class="fas fa-check-circle"></i> Access 24/7 customer support</li>
+                        <li><i class="fas fa-check-circle"></i> Save favorite destinations and services</li>
+                    </ul>
+
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure & Private</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-award"></i>
+                            <span>Trusted Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/fafalilogo.PNG" alt="Fafali Group" class="logo">
+                    </div>
+                    <p>Your trusted partner for global travel, visa, and events solutions.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@fafaligroup?si=K5cLnhZqKNfJKLKd" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@fafaligroup?_r=1&_t=ZM-92fNuJu1YPA" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/fafali-group/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/fafali_group?igsh=MTlsYjhjaTBwMjU5ZQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Hotel Booking</a></li>
+                        <li><a href="bookings.html">Flight Booking</a></li>
+                        <li><a href="bookings.html">Tour Booking</a></li>
+                        <li><a href="bookings.html">Events Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ghana & UAE Locations</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+233(0)593624776</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fafaligroup.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/971556657953">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a> |
+                    <a href="terms-conditions.html">Terms & Conditions</a> |
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Fafali Group. All rights reserved.</p>
+                </div>
+                <div class="footer-developer">
+                    <p>Developed by Dromor Narh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Password toggle functionality
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        }
+
+        // Sign up form handling
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                country: document.getElementById('country').value,
+                terms: document.getElementById('terms').checked,
+                newsletter: document.getElementById('newsletter').checked
+            };
+            
+            // Clear previous errors
+            clearErrors();
+            
+            // Validation
+            let isValid = true;
+            
+            if (!formData.firstName) {
+                showError('firstNameError', 'First name is required');
+                isValid = false;
+            }
+            
+            if (!formData.lastName) {
+                showError('lastNameError', 'Last name is required');
+                isValid = false;
+            }
+            
+            if (!formData.email) {
+                showError('emailError', 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(formData.email)) {
+                showError('emailError', 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            if (!formData.phone) {
+                showError('phoneError', 'Phone number is required');
+                isValid = false;
+            }
+            
+            if (!formData.password) {
+                showError('passwordError', 'Password is required');
+                isValid = false;
+            } else if (formData.password.length < 6) {
+                showError('passwordError', 'Password must be at least 6 characters long');
+                isValid = false;
+            }
+            
+            if (!formData.confirmPassword) {
+                showError('confirmPasswordError', 'Please confirm your password');
+                isValid = false;
+            } else if (formData.password !== formData.confirmPassword) {
+                showError('confirmPasswordError', 'Passwords do not match');
+                isValid = false;
+            }
+            
+            if (!formData.country) {
+                showError('countryError', 'Please select your country');
+                isValid = false;
+            }
+            
+            if (!formData.terms) {
+                showError('termsError', 'You must agree to the terms and conditions');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Check if user already exists
+                const users = JSON.parse(localStorage.getItem('fafaliUsers') || '[]');
+                const existingUser = users.find(u => u.email === formData.email);
+                
+                if (existingUser) {
+                    showError('emailError', 'An account with this email already exists');
+                    return;
+                }
+                
+                // Create new user
+                const newUser = {
+                    id: Date.now().toString(),
+                    ...formData,
+                    createdAt: new Date().toISOString(),
+                    isActive: true
+                };
+                
+                // Remove confirmPassword before storing
+                delete newUser.confirmPassword;
+                
+                // Save user
+                users.push(newUser);
+                localStorage.setItem('fafaliUsers', JSON.stringify(users));
+                
+                // Create user session
+                const userSession = {
+                    id: newUser.id,
+                    email: newUser.email,
+                    firstName: newUser.firstName,
+                    lastName: newUser.lastName,
+                    isLoggedIn: true,
+                    loginTime: new Date().toISOString()
+                };
+                
+                sessionStorage.setItem('fafaliUserSession', JSON.stringify(userSession));
+                
+                // Show success message and redirect
+                alert('Account created successfully! Redirecting to your dashboard...');
+                window.location.href = 'dashboard.html';
+            }
+        });
+
+        function showError(elementId, message) {
+            document.getElementById(elementId).textContent = message;
+            document.getElementById(elementId).style.display = 'block';
+        }
+
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => {
+                element.style.display = 'none';
+            });
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>

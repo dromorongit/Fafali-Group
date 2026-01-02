@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Fafali Group</title>
+    <meta name="description" content="Manage your Fafali Group profile, track applications, and bookings.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="fafalilogo.JPG" alt="Fafali Group" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Bookings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item dropdown user-dropdown">
+                    <a href="#" class="nav-link user-link">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu user-menu">
+                        <li><a href="#profile" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="#applications" onclick="showSection('applications')"><i class="fas fa-file-alt"></i> Applications</a></li>
+                        <li><a href="#bookings" onclick="showSection('bookings')"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                        <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#" onclick="signOut()"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h1>Welcome back, <span id="welcomeUserName">User</span>!</h1>
+                <p>Manage your profile, track applications, and bookings</p>
+            </div>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="stat-info">
+                        <h3 id="applicationsCount">0</h3>
+                        <p>Active Applications</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="stat-info">
+                        <h3 id="bookingsCount">0</h3>
+                        <p>Total Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <h3 id="completedCount">0</h3>
+                        <p>Completed Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <!-- Profile Section -->
+            <div id="profileSection" class="dashboard-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-user"></i> Profile Information</h2>
+                    <button class="btn btn-outline" onclick="toggleEditProfile()">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="profile-info">
+                                <h3 id="profileName">User Name</h3>
+                                <p id="profileEmail">user@example.com</p>
+                                <p id="profileCountry">Country</p>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <label>Full Name</label>
+                                <p id="detailFullName">-</p>
+                            </div>
+                            <div class="detail-group">
+                                <label>Email Address</label>
+                                <p id="detailEmail">-</p>
+                            </div>
+                            <div class="detail-group">
+                                <label>Phone Number</label>
+                                <p id="detailPhone">-</p>
+                            </div>
+                            <div class="detail-group">
+                                <label>Country</label>
+                                <p id="detailCountry">-</p>
+                            </div>
+                            <div class="detail-group">
+                                <label>Member Since</label>
+                                <p id="memberSince">-</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Profile Form -->
+                    <div id="editProfileForm" class="profile-form" style="display: none;">
+                        <form id="profileEditForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="editFirstName">First Name</label>
+                                    <input type="text" id="editFirstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editLastName">Last Name</label>
+                                    <input type="text" id="editLastName" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editEmail">Email Address</label>
+                                <input type="email" id="editEmail" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPhone">Phone Number</label>
+                                <input type="tel" id="editPhone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editCountry">Country</label>
+                                <select id="editCountry" class="form-input" required>
+                                    <option value="">Select your country</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="cancelEditProfile()">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Section -->
+            <div id="applicationsSection" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-alt"></i> Visa Applications</h2>
+                    <a href="visa-application.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Application
+                    </a>
+                </div>
+                
+                <div class="applications-list">
+                    <div id="applicationsContainer">
+                        <div class="empty-state">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>No Applications Yet</h3>
+                            <p>Start by creating your first visa application</p>
+                            <a href="visa-application.html" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings Section -->
+            <div id="bookingsSection" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-check"></i> My Bookings</h2>
+                    <a href="bookings.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Booking
+                    </a>
+                </div>
+                
+                <div class="bookings-list">
+                    <div id="bookingsContainer">
+                        <div class="empty-state">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>No Bookings Yet</h3>
+                            <p>Make your first booking to get started</p>
+                            <a href="bookings.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settingsSection" class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Account Settings</h2>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="settings-card">
+                        <h3>Change Password</h3>
+                        <form id="passwordChangeForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword" class="form-input" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Notification Preferences</h3>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    Email notifications for application updates
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" id="bookingNotifications" checked>
+                                    Email notifications for booking confirmations
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" id="marketingEmails">
+                                    Marketing emails and special offers
+                                </label>
+                            </div>
+                            <button class="btn btn-primary" onclick="saveNotificationSettings()">Save Preferences</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card danger-zone">
+                        <h3>Account Actions</h3>
+                        <p>These actions cannot be undone. Please proceed with caution.</p>
+                        <button class="btn btn-danger" onclick="confirmDeleteAccount()">
+                            <i class="fas fa-trash"></i> Delete Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/fafalilogo.PNG" alt="Fafali Group" class="logo">
+                    </div>
+                    <p>Your trusted partner for global travel, visa, and events solutions.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@fafaligroup?si=K5cLnhZqKNfJKLKd" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@fafaligroup?_r=1&_t=ZM-92fNuJu1YPA" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/fafali-group/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/fafali_group?igsh=MTlsYjhjaTBwMjU5ZQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="visa-application.html">Visa Application</a></li>
+                        <li><a href="bookings.html">Hotel Booking</a></li>
+                        <li><a href="bookings.html">Flight Booking</a></li>
+                        <li><a href="bookings.html">Tour Booking</a></li>
+                        <li><a href="bookings.html">Events Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ghana & UAE Locations</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+233(0)593624776</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fafaligroup.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/971556657953">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a> |
+                    <a href="terms-conditions.html">Terms & Conditions</a> |
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Fafali Group. All rights reserved.</p>
+                </div>
+                <div class="footer-developer">
+                    <p>Developed by Dromor Narh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
