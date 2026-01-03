@@ -25,6 +25,8 @@ class FafaliGroupWebsite {
         this.setupMediaStorytelling();
         this.setupVisaSupport();
         this.setupHeroImageSlider();
+        this.setupEventGallery();
+        this.setupEventNews();
         this.updateVlogSection();
         
         // Set up event listeners
@@ -821,6 +823,85 @@ class FafaliGroupWebsite {
         });
     }
     
+    // Event Gallery Functionality
+    setupEventGallery() {
+        const eventCards = document.querySelectorAll('.event-card');
+        
+        eventCards.forEach(card => {
+            const viewBtn = card.querySelector('[data-event="view"]');
+            const learnBtn = card.querySelector('[data-event="learn"]');
+            
+            if (viewBtn) {
+                viewBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const event = viewBtn.getAttribute('data-event');
+                    this.showNotification(`Opening photo gallery for ${event} event...`, 'info');
+                    // In a real application, this would open a gallery or navigate to a page
+                });
+            }
+            
+            if (learnBtn) {
+                learnBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const event = learnBtn.getAttribute('data-event');
+                    this.showNotification(`Loading details for ${event} event...`, 'info');
+                    // In a real application, this would navigate to event details page
+                });
+            }
+        });
+    }
+    
+    // Event & News Functionality
+    setupEventNews() {
+        const newsButtons = document.querySelectorAll('.news-content .btn');
+        
+        newsButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const buttonText = button.textContent.toLowerCase();
+                
+                if (buttonText.includes('read') || buttonText.includes('learn')) {
+                    this.showNotification('Opening article...', 'info');
+                } else if (buttonText.includes('register')) {
+                    this.showNotification('Redirecting to registration page...', 'success');
+                } else if (buttonText.includes('view')) {
+                    this.showNotification('Loading content...', 'info');
+                } else if (buttonText.includes('subscribe')) {
+                    this.showNotification('Opening subscription form...', 'success');
+                } else {
+                    this.showNotification('Loading content...', 'info');
+                }
+            });
+        });
+        
+        // News item hover effects
+        const newsItems = document.querySelectorAll('.news-item');
+        newsItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Event card interactions
+        const eventActions = document.querySelectorAll('.event-actions .btn');
+        eventActions.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const eventType = button.getAttribute('data-event');
+                
+                if (button.textContent.includes('View Photos')) {
+                    this.showNotification(`Opening photo gallery for ${eventType} event...`, 'info');
+                } else if (button.textContent.includes('Learn More')) {
+                    this.showNotification(`Loading details for ${eventType} event...`, 'info');
+                }
+            });
+        });
+    }
+
     // Hero Image Slider Functionality
     setupHeroImageSlider() {
         const heroImages = document.querySelectorAll('.hero-image');
