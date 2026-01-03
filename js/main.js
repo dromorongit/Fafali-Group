@@ -18,6 +18,13 @@ class FafaliGroupWebsite {
         this.setupAccessibility();
         this.setupVideoControls();
         this.setupImageCarousel();
+        this.setupSearchBookingTools();
+        this.setupServiceCards();
+        this.setupPackageCarousel();
+        this.setupGallerySlideshow();
+        this.setupMediaStorytelling();
+        this.setupVisaSupport();
+        this.setupHeroImageSlider();
         this.updateVlogSection();
         
         // Set up event listeners
@@ -155,8 +162,8 @@ class FafaliGroupWebsite {
                 
                 const target = document.querySelector(href);
                 if (target) {
-                    // Account for fixed navbar height (160px) plus some margin
-                    const navbarHeight = 160;
+                    // Account for fixed navbar (~195px) + promotional banner (75px) height
+                    const navbarHeight = 270;
                     const offsetTop = target.offsetTop - navbarHeight;
                     
                     window.scrollTo({
@@ -518,6 +525,346 @@ class FafaliGroupWebsite {
                 setTimeout(() => inThrottle = false, limit);
             }
         };
+    }
+
+    // Search and Booking Tools Functionality
+    setupSearchBookingTools() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const searchForms = document.querySelectorAll('.search-form');
+        
+        if (tabButtons.length === 0) return;
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and forms
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                searchForms.forEach(form => form.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding form
+                button.classList.add('active');
+                const targetForm = document.getElementById(`${targetTab}-form`);
+                if (targetForm) {
+                    targetForm.classList.add('active');
+                }
+            });
+        });
+        
+        // Price range display
+        const priceRange = document.getElementById('price-range');
+        const priceValue = document.getElementById('price-value');
+        
+        if (priceRange && priceValue) {
+            priceRange.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value).toLocaleString();
+                priceValue.textContent = value;
+            });
+        }
+        
+        // Visa processing time and fee display
+        const destination = document.getElementById('destination');
+        const visaType = document.getElementById('visa-type');
+        const processingTime = document.getElementById('processing-time');
+        const visaFee = document.getElementById('visa-fee');
+        
+        if (destination && visaType) {
+            const updateVisaInfo = () => {
+                const dest = destination.value;
+                const type = visaType.value;
+                
+                if (dest && type) {
+                    // Simulate visa information based on destination and type
+                    const processingTimes = {
+                        'usa': { 'tourist': '10-15 business days', 'business': '7-10 business days', 'student': '15-20 business days' },
+                        'uk': { 'tourist': '3-5 business days', 'business': '5-7 business days', 'student': '10-15 business days' },
+                        'canada': { 'tourist': '2-4 weeks', 'business': '2-3 weeks', 'student': '4-8 weeks' },
+                        'australia': { 'tourist': '15-30 days', 'business': '10-20 days', 'student': '1-3 months' },
+                        'germany': { 'tourist': '5-10 business days', 'business': '3-7 business days', 'student': '10-15 business days' },
+                        'france': { 'tourist': '5-10 business days', 'business': '3-7 business days', 'student': '10-15 business days' },
+                        'uae': { 'tourist': '3-5 business days', 'business': '2-3 business days', 'student': '5-7 business days' },
+                        'south-africa': { 'tourist': '5-10 business days', 'business': '3-7 business days', 'student': '10-15 business days' }
+                    };
+                    
+                    const fees = {
+                        'usa': { 'tourist': 'GHS 2,500', 'business': 'GHS 3,200', 'student': 'GHS 2,800' },
+                        'uk': { 'tourist': 'GHS 1,800', 'business': 'GHS 2,200', 'student': 'GHS 2,000' },
+                        'canada': { 'tourist': 'GHS 2,200', 'business': 'GHS 2,800', 'student': 'GHS 2,400' },
+                        'australia': { 'tourist': 'GHS 2,800', 'business': 'GHS 3,500', 'student': 'GHS 3,000' },
+                        'germany': { 'tourist': 'GHS 1,600', 'business': 'GHS 2,000', 'student': 'GHS 1,800' },
+                        'france': { 'tourist': 'GHS 1,600', 'business': 'GHS 2,000', 'student': 'GHS 1,800' },
+                        'uae': { 'tourist': 'GHS 1,200', 'business': 'GHS 1,500', 'student': 'GHS 1,300' },
+                        'south-africa': { 'tourist': 'GHS 1,400', 'business': 'GHS 1,800', 'student': 'GHS 1,600' }
+                    };
+                    
+                    if (processingTimes[dest] && processingTimes[dest][type]) {
+                        processingTime.textContent = processingTimes[dest][type];
+                        visaFee.textContent = fees[dest][type];
+                    }
+                } else {
+                    processingTime.textContent = 'Select destination to see estimated time';
+                    visaFee.textContent = 'Select options to see fee estimate';
+                }
+            };
+            
+            destination.addEventListener('change', updateVisaInfo);
+            visaType.addEventListener('change', updateVisaInfo);
+        }
+    }
+    
+    // Service Cards Functionality
+    setupServiceCards() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            const serviceBtn = card.querySelector('.service-btn');
+            const serviceForm = card.querySelector('.service-form');
+            
+            if (serviceBtn && serviceForm) {
+                serviceBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const service = serviceBtn.getAttribute('data-service');
+                    
+                    // Toggle form visibility
+                    if (serviceForm.style.display === 'none' || !serviceForm.style.display) {
+                        serviceForm.style.display = 'block';
+                        serviceBtn.textContent = 'Hide Form';
+                        serviceBtn.classList.remove('btn-primary');
+                        serviceBtn.classList.add('btn-outline');
+                    } else {
+                        serviceForm.style.display = 'none';
+                        serviceBtn.textContent = serviceBtn.textContent.includes('Learn More') ? 'Learn More' : 'Apply Now';
+                        serviceBtn.classList.remove('btn-outline');
+                        serviceBtn.classList.add('btn-primary');
+                    }
+                    
+                    // Scroll to form if just opened
+                    if (serviceForm.style.display === 'block') {
+                        setTimeout(() => {
+                            serviceForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 100);
+                    }
+                });
+            }
+        });
+    }
+    
+    // Package Carousel Functionality
+    setupPackageCarousel() {
+        const packageCards = document.querySelectorAll('.package-card');
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        const indicators = document.querySelectorAll('.packages-carousel-container .indicator');
+        
+        if (packageCards.length === 0) return;
+        
+        let currentSlide = 0;
+        
+        const showSlide = (index) => {
+            packageCards.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            
+            currentSlide = index;
+        };
+        
+        // Initialize
+        showSlide(0);
+        
+        // Previous button
+        if (carouselPrev) {
+            carouselPrev.addEventListener('click', () => {
+                const prevIndex = currentSlide === 0 ? packageCards.length - 1 : currentSlide - 1;
+                showSlide(prevIndex);
+            });
+        }
+        
+        // Next button
+        if (carouselNext) {
+            carouselNext.addEventListener('click', () => {
+                const nextIndex = currentSlide === packageCards.length - 1 ? 0 : currentSlide + 1;
+                showSlide(nextIndex);
+            });
+        }
+        
+        // Indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Package booking buttons
+        const packageBtns = document.querySelectorAll('.package-btn');
+        packageBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const package = btn.getAttribute('data-package');
+                this.showNotification(`Redirecting to booking page for ${package} package...`, 'info');
+                // In a real application, this would redirect to a booking page
+            });
+        });
+    }
+    
+    // Gallery Slideshow Functionality
+    setupGallerySlideshow() {
+        const gallerySlides = document.querySelectorAll('.gallery-slide');
+        const galleryPrev = document.querySelector('.gallery-prev');
+        const galleryNext = document.querySelector('.gallery-next');
+        const galleryIndicators = document.querySelectorAll('.gallery-container .indicator');
+        
+        if (gallerySlides.length === 0) return;
+        
+        let currentGallerySlide = 0;
+        let galleryInterval;
+        
+        const showGallerySlide = (index) => {
+            gallerySlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            galleryIndicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            
+            currentGallerySlide = index;
+        };
+        
+        // Initialize
+        showGallerySlide(0);
+        
+        // Auto-advance slides
+        const startAutoAdvance = () => {
+            galleryInterval = setInterval(() => {
+                const nextIndex = currentGallerySlide === gallerySlides.length - 1 ? 0 : currentGallerySlide + 1;
+                showGallerySlide(nextIndex);
+            }, 5000);
+        };
+        
+        const stopAutoAdvance = () => {
+            clearInterval(galleryInterval);
+        };
+        
+        // Start auto-advance
+        startAutoAdvance();
+        
+        // Previous button
+        if (galleryPrev) {
+            galleryPrev.addEventListener('click', () => {
+                stopAutoAdvance();
+                const prevIndex = currentGallerySlide === 0 ? gallerySlides.length - 1 : currentGallerySlide - 1;
+                showGallerySlide(prevIndex);
+                startAutoAdvance();
+            });
+        }
+        
+        // Next button
+        if (galleryNext) {
+            galleryNext.addEventListener('click', () => {
+                stopAutoAdvance();
+                const nextIndex = currentGallerySlide === gallerySlides.length - 1 ? 0 : currentGallerySlide + 1;
+                showGallerySlide(nextIndex);
+                startAutoAdvance();
+            });
+        }
+        
+        // Indicators
+        galleryIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                stopAutoAdvance();
+                showGallerySlide(index);
+                startAutoAdvance();
+            });
+        });
+        
+        // Pause on hover
+        const galleryContainer = document.querySelector('.gallery-container');
+        if (galleryContainer) {
+            galleryContainer.addEventListener('mouseenter', stopAutoAdvance);
+            galleryContainer.addEventListener('mouseleave', startAutoAdvance);
+        }
+    }
+    
+    // Media Storytelling Functionality
+    setupMediaStorytelling() {
+        const playButtons = document.querySelectorAll('.play-btn');
+        const experienceCards = document.querySelectorAll('.experience-card');
+        
+        // Play button functionality
+        playButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const videoContainer = button.closest('.video-container');
+                const video = videoContainer.querySelector('video');
+                
+                if (video) {
+                    video.play();
+                    button.style.display = 'none';
+                }
+            });
+        });
+        
+        // Experience card hover effects
+        experienceCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const overlay = card.querySelector('.experience-overlay');
+                if (overlay) {
+                    // In a real application, this would open a gallery or navigate to a page
+                    this.showNotification('Opening gallery...', 'info');
+                }
+            });
+        });
+    }
+    
+    // Hero Image Slider Functionality
+    setupHeroImageSlider() {
+        const heroImages = document.querySelectorAll('.hero-image');
+        
+        if (heroImages.length === 0) return;
+        
+        let currentHeroSlide = 0;
+        
+        const showHeroSlide = (index) => {
+            heroImages.forEach((image, i) => {
+                image.classList.toggle('active', i === index);
+            });
+            
+            currentHeroSlide = index;
+        };
+        
+        // Initialize with first image
+        showHeroSlide(0);
+        
+        // Auto-advance slides
+        setInterval(() => {
+            const nextIndex = currentHeroSlide === heroImages.length - 1 ? 0 : currentHeroSlide + 1;
+            showHeroSlide(nextIndex);
+        }, 5000); // Change image every 5 seconds
+    }
+    
+    // Visa Support Interactive Features
+    setupVisaSupport() {
+        const startVisaSupportBtn = document.getElementById('start-visa-support');
+        
+        if (startVisaSupportBtn) {
+            startVisaSupportBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const destination = document.getElementById('destination').value;
+                const visaType = document.getElementById('visa-type').value;
+                
+                if (destination && visaType) {
+                    this.showNotification('Redirecting to visa application...', 'success');
+                    // In a real application, this would redirect to a visa application page
+                } else {
+                    this.showNotification('Please select destination and visa type', 'error');
+                }
+            });
+        }
     }
 
     // Gallery Lightbox (will be extended in gallery page)

@@ -32,21 +32,26 @@
                 <li class="nav-item dropdown">
                     <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="visa-application.html">Visa Application</a></li>
-                        <li><a href="bookings.html">Bookings</a></li>
+                        <li><a href="visa-application.html">Visa Applications</a></li>
+                        <li><a href="bookings.html">Flight & Hotel Booking</a></li>
+                        <li><a href="bookings.html">Tours & Packages</a></li>
+                        <li><a href="bookings.html">Events Booking</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#destinations" class="nav-link">Destinations</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item auth-nav">
-                    <a href="signin.html" class="nav-link">Sign In</a>
+                    <a href="signin.html" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item auth-nav">
                     <a href="signup.html" class="nav-link btn btn-primary">Sign Up</a>
@@ -73,18 +78,176 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
-            <video autoplay muted loop class="hero-video">
-                <source src="assets/videos/promotional-video.mp4" type="video/mp4">
+            <div class="hero-image-slider">
+                <img src="explorer.JPG" alt="Dubai Skyline" class="hero-image active">
+                <img src="travelservice.JPG" alt="Beach Paradise" class="hero-image">
+                <img src="client.jpg" alt="Safari Adventure" class="hero-image">
+            </div>
+            <video autoplay muted loop class="hero-video" style="opacity: 0.3;">
+                <source src="fafaligroupad.MP4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
             <div class="container">
-                <h1 class="hero-title fade-in-up">Your Global Travel, Visa & Events Solutions Provider</h1>
+                <h1 class="hero-title fade-in-up">Your Global Travel, Visa & Events Solutions Partner</h1>
                 <p class="hero-subtitle fade-in-up delay-1">Professional services across Ghana and UAE for all your travel needs</p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <a href="visa-application.html" class="btn btn-primary">Apply for Visa</a>
-                    <a href="bookings.html" class="btn btn-secondary">Book a Service</a>
+                    <a href="visa-application.html" class="btn btn-primary btn-ultra-modern">Apply for Visa</a>
+                    <a href="bookings.html" class="btn btn-secondary btn-ultra-modern">Book Travel Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Booking Tools Section -->
+    <section class="search-booking-tools">
+        <div class="container">
+            <div class="tools-container fade-in-up">
+                <h2 class="tools-title">Find Your Perfect Travel Solution</h2>
+                <div class="search-tabs">
+                    <button class="tab-button active" data-tab="visa">Visa Support</button>
+                    <button class="tab-button" data-tab="travel">Flight & Hotel</button>
+                    <button class="tab-button" data-tab="tours">Tour Packages</button>
+                </div>
+                
+                <div class="search-forms">
+                    <!-- Visa Support Search -->
+                    <div class="search-form active" id="visa-form">
+                        <h3>Find Visa Requirements</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="destination">Destination Country</label>
+                                <select id="destination" name="destination">
+                                    <option value="">Select Destination</option>
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="france">France</option>
+                                    <option value="uae">UAE</option>
+                                    <option value="south-africa">South Africa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="visa-type">Visa Type</label>
+                                <select id="visa-type" name="visa-type">
+                                    <option value="">Select Visa Type</option>
+                                    <option value="tourist">Tourist Visa</option>
+                                    <option value="business">Business Visa</option>
+                                    <option value="student">Student Visa</option>
+                                    <option value="transit">Transit Visa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="processing-time">Processing Time</label>
+                                <div class="info-display" id="processing-time">Select destination to see estimated time</div>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <div class="price-display" id="visa-fee">Select options to see fee estimate</div>
+                        </div>
+                        <button class="btn btn-primary btn-large" id="start-visa-support">Start Visa Support</button>
+                    </div>
+                    
+                    <!-- Flight & Hotel Search -->
+                    <div class="search-form" id="travel-form">
+                        <h3>Book Flight & Hotel</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from-city">From</label>
+                                <input type="text" id="from-city" name="from-city" placeholder="Departure city">
+                            </div>
+                            <div class="form-group">
+                                <label for="to-city">To</label>
+                                <input type="text" id="to-city" name="to-city" placeholder="Destination city">
+                            </div>
+                            <div class="form-group">
+                                <label for="depart-date">Departure</label>
+                                <input type="date" id="depart-date" name="depart-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="return-date">Return</label>
+                                <input type="date" id="return-date" name="return-date">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passengers">Passengers</label>
+                                <select id="passengers" name="passengers">
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="price-range">Price Range (GHS)</label>
+                                <input type="range" id="price-range" name="price-range" min="1000" max="10000" value="5000" step="500">
+                                <div class="price-range-display">Up to GHS <span id="price-value">5,000</span></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hotel-rating">Hotel Rating</label>
+                                <select id="hotel-rating" name="hotel-rating">
+                                    <option value="">Any Rating</option>
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-large" id="search-travel">Search Travel</button>
+                    </div>
+                    
+                    <!-- Tour Packages Search -->
+                    <div class="search-form" id="tours-form">
+                        <h3>Discover Tour Packages</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tour-region">Region</label>
+                                <select id="tour-region" name="tour-region">
+                                    <option value="">Select Region</option>
+                                    <option value="africa">Africa</option>
+                                    <option value="europe">Europe</option>
+                                    <option value="asia">Asia</option>
+                                    <option value="americas">Americas</option>
+                                    <option value="middle-east">Middle East</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-type">Tour Type</label>
+                                <select id="tour-type" name="tour-type">
+                                    <option value="">Select Type</option>
+                                    <option value="adventure">Adventure</option>
+                                    <option value="cultural">Cultural</option>
+                                    <option value="beach">Beach</option>
+                                    <option value="safari">Safari</option>
+                                    <option value="city">City Tours</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-duration">Duration</label>
+                                <select id="tour-duration" name="tour-duration">
+                                    <option value="">Any Duration</option>
+                                    <option value="3-5">3-5 Days</option>
+                                    <option value="6-10">6-10 Days</option>
+                                    <option value="11-14">11-14 Days</option>
+                                    <option value="15+">15+ Days</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-price">Budget Range</label>
+                                <select id="tour-price" name="tour-price">
+                                    <option value="">Any Budget</option>
+                                    <option value="budget">Budget (Under GHS 3,000)</option>
+                                    <option value="mid-range">Mid-range (GHS 3,000-7,000)</option>
+                                    <option value="luxury">Luxury (Over GHS 7,000)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-large" id="search-tours">Search Tours</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,54 +322,357 @@
         <div class="container">
             <h2 class="section-title fade-in-up">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-passport"></i>
+                <div class="service-card fade-in-up" data-service="visa">
+                    <div class="service-image">
+                        <img src="Ceo.JPG" alt="Visa Application Service" class="service-img">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Visa Application</h3>
-                    <p>Professional visa application assistance for various countries with transparent processes.</p>
-                    <a href="visa-application.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card fade-in-up delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-hotel"></i>
+                    <div class="service-content">
+                        <h3>Visa Application</h3>
+                        <p>Professional visa application assistance for various countries with transparent processes and expert guidance.</p>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Expert Guidance</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>Fast Processing</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Process</span>
+                            </div>
+                        </div>
+                        <div class="service-form" style="display: none;">
+                            <h4>Quick Visa Application</h4>
+                            <form class="mini-form">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="">Select Destination</option>
+                                        <option value="usa">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="canada">Canada</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-small">Continue Application</button>
+                            </form>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-outline service-btn" data-service="visa">Learn More</button>
+                            <button class="btn btn-primary service-btn" data-service="visa">Apply Now</button>
+                        </div>
                     </div>
-                    <h3>Hotel Booking Request</h3>
-                    <p>Find and book the perfect accommodation for your travels with our trusted partners.</p>
-                    <a href="bookings.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card fade-in-up delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-plane"></i>
+                
+                <div class="service-card fade-in-up delay-1" data-service="hotel">
+                    <div class="service-image">
+                        <img src="travelservice.JPG" alt="Hotel Booking Service" class="service-img">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Flight Booking Request</h3>
-                    <p>Competitive flight bookings to destinations worldwide with flexible options.</p>
-                    <a href="bookings.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card fade-in-up delay-3">
-                    <div class="service-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+                    <div class="service-content">
+                        <h3>Flight & Hotel Booking</h3>
+                        <p>Find and book the perfect accommodation and flights for your travels with our trusted partners worldwide.</p>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-search"></i>
+                                <span>Best Rates</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-globe"></i>
+                                <span>Global Network</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-phone"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+                        <div class="service-form" style="display: none;">
+                            <h4>Booking Request</h4>
+                            <form class="mini-form">
+                                <div class="form-group">
+                                    <input type="text" placeholder="From City" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="To City" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" placeholder="Travel Date" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-small">Search & Book</button>
+                            </form>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-outline service-btn" data-service="hotel">Learn More</button>
+                            <button class="btn btn-primary service-btn" data-service="hotel">Book Now</button>
+                        </div>
                     </div>
-                    <h3>Local Tour Booking</h3>
-                    <p>Discover local attractions and experiences with our curated tour packages.</p>
-                    <a href="bookings.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card fade-in-up delay-4">
-                    <div class="service-icon">
-                        <i class="fas fa-globe-americas"></i>
+                
+                <div class="service-card fade-in-up delay-2" data-service="tours">
+                    <div class="service-image">
+                        <img src="explorer.JPG" alt="Tour Packages" class="service-img">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                        </div>
                     </div>
-                    <h3>International Tour Booking</h3>
-                    <p>Explore the world with our international tour packages and travel arrangements.</p>
-                    <a href="bookings.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card fade-in-up delay-5">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-check"></i>
+                    <div class="service-content">
+                        <h3>Tours & Packages</h3>
+                        <p>Discover amazing destinations with our curated tour packages and guided travel experiences.</p>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-route"></i>
+                                <span>Guided Tours</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-camera"></i>
+                                <span>Photo Opportunities</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>Small Groups</span>
+                            </div>
+                        </div>
+                        <div class="service-form" style="display: none;">
+                            <h4>Tour Booking</h4>
+                            <form class="mini-form">
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="">Select Tour Type</option>
+                                        <option value="adventure">Adventure Tours</option>
+                                        <option value="cultural">Cultural Tours</option>
+                                        <option value="beach">Beach Tours</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="Number of People" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" placeholder="Preferred Date" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-small">Book Tour</button>
+                            </form>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-outline service-btn" data-service="tours">Learn More</button>
+                            <button class="btn btn-primary service-btn" data-service="tours">View Tours</button>
+                        </div>
                     </div>
-                    <h3>Events Booking</h3>
-                    <p>Professional event planning and booking services for corporate and personal events.</p>
-                    <a href="bookings.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+                
+                <div class="service-card fade-in-up delay-3" data-service="events">
+                    <div class="service-image">
+                        <img src="fgteam.JPG" alt="Events Booking" class="service-img">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Events Booking</h3>
+                        <p>Professional event planning and booking services for corporate and personal special occasions.</p>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Corporate Events</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart"></i>
+                                <span>Special Occasions</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-concierge-bell"></i>
+                                <span>Full Service</span>
+                            </div>
+                        </div>
+                        <div class="service-form" style="display: none;">
+                            <h4>Event Booking</h4>
+                            <form class="mini-form">
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="">Event Type</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="conference">Conference</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" placeholder="Event Date" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="Expected Guests" min="10" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-small">Plan Event</button>
+                            </form>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-outline service-btn" data-service="events">Learn More</button>
+                            <button class="btn btn-primary service-btn" data-service="events">Book Event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations and Packages Section -->
+    <section class="destinations-packages" id="destinations">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Featured Destinations & Packages</h2>
+            <p class="section-subtitle fade-in-up delay-1">Discover amazing destinations with our curated travel packages</p>
+            
+            <div class="packages-carousel-container">
+                <div class="packages-carousel">
+                    <div class="package-card fade-in-up delay-2">
+                        <div class="package-image">
+                            <img src="explorer.JPG" alt="Safari Adventure" class="package-img">
+                            <div class="package-overlay">
+                                <div class="package-badge">Popular</div>
+                            </div>
+                        </div>
+                        <div class="package-content">
+                            <h3>Safari Adventure</h3>
+                            <p>Experience the wild beauty of African safari parks with expert guides and unforgettable wildlife encounters.</p>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i>
+                                    <span>7 Days</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₵8,500</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                            </div>
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>Luxury Lodges</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>All Meals</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Photography</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-large package-btn" data-package="safari">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card fade-in-up delay-3">
+                        <div class="package-image">
+                            <img src="travelservice.JPG" alt="Beach Paradise" class="package-img">
+                            <div class="package-overlay">
+                                <div class="package-badge trending">Trending</div>
+                            </div>
+                        </div>
+                        <div class="package-content">
+                            <h3>Beach Paradise</h3>
+                            <p>Relax on pristine beaches with crystal-clear waters, white sand, and tropical paradise vibes.</p>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i>
+                                    <span>5 Days</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₵6,200</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                            </div>
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-swimmer"></i>
+                                    <span>Water Sports</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Spa Services</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-cocktail"></i>
+                                    <span>Beach Bar</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-large package-btn" data-package="beach">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card fade-in-up delay-4">
+                        <div class="package-image">
+                            <img src="client.jpg" alt="Cultural Heritage" class="package-img">
+                            <div class="package-overlay">
+                                <div class="package-badge new">New</div>
+                            </div>
+                        </div>
+                        <div class="package-content">
+                            <h3>Cultural Heritage Trip</h3>
+                            <p>Immerse yourself in rich traditions, historical landmarks, and authentic local experiences.</p>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i>
+                                    <span>6 Days</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₵5,800</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                            </div>
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-monument"></i>
+                                    <span>Historical Sites</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-users"></i>
+                                    <span>Local Guides</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-music"></i>
+                                    <span>Cultural Shows</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-large package-btn" data-package="cultural">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-prev" aria-label="Previous package">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-next" aria-label="Next package">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                    <div class="indicator" data-slide="2"></div>
+                </div>
+            </div>
+            
+            <div class="packages-cta fade-in-up delay-5">
+                <a href="bookings.html" class="btn btn-outline btn-large">View All Packages</a>
             </div>
         </div>
     </section>
@@ -296,6 +762,134 @@
                         </div>
                     </div>
                     <h3>Photo Gallery</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Storytelling Section -->
+    <section class="media-storytelling">
+        <div class="media-background">
+            <video autoplay muted loop class="background-video">
+                <source src="fafaligroupad.MP4" type="video/mp4">
+            </video>
+            <div class="media-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="storytelling-content">
+                <h2 class="section-title fade-in-up">Travel Stories & Experiences</h2>
+                <p class="section-subtitle fade-in-up delay-1">Discover the world through our lens</p>
+                
+                <div class="media-grid">
+                    <!-- Travel Video Clips -->
+                    <div class="media-item video-item fade-in-up delay-2">
+                        <div class="video-container">
+                            <video controls poster="explorer.JPG" class="travel-video">
+                                <source src="fafaligroupad.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay">
+                                <button class="play-btn" aria-label="Play video">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="media-info">
+                            <h3>Dubai Business Hub</h3>
+                            <p>Experience the modern business landscape of Dubai with our comprehensive corporate travel services.</p>
+                            <div class="media-meta">
+                                <span class="duration">8:32</span>
+                                <span class="views">2.1K views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Slideshow -->
+                    <div class="media-item gallery-item fade-in-up delay-3">
+                        <div class="gallery-container">
+                            <div class="gallery-slider">
+                                <img src="fgteam.JPG" alt="Team at work" class="gallery-slide active">
+                                <img src="Ceo.JPG" alt="CEO portrait" class="gallery-slide">
+                                <img src="theodosia.JPG" alt="Team member" class="gallery-slide">
+                                <img src="Cynthia.JPG" alt="Customer service" class="gallery-slide">
+                                <img src="david.JPG" alt="Client meeting" class="gallery-slide">
+                            </div>
+                            <div class="gallery-controls">
+                                <button class="gallery-prev" aria-label="Previous image">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-next" aria-label="Next image">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="gallery-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                                <div class="indicator" data-slide="4"></div>
+                            </div>
+                        </div>
+                        <div class="media-info">
+                            <h3>Behind the Scenes</h3>
+                            <p>Get an exclusive look at our team in action, serving clients and creating memorable travel experiences.</p>
+                            <div class="media-meta">
+                                <span class="photos">5 Photos</span>
+                                <span class="category">Team</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Travel Experiences -->
+                    <div class="media-item experience-item fade-in-up delay-4">
+                        <div class="experience-grid">
+                            <div class="experience-card">
+                                <img src="travelservice.JPG" alt="Beach vacation" class="experience-img">
+                                <div class="experience-overlay">
+                                    <h4>Beach Escapes</h4>
+                                    <p>Tropical paradise getaways</p>
+                                    <button class="btn btn-outline btn-small">View Gallery</button>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <img src="explorer.JPG" alt="Safari adventure" class="experience-img">
+                                <div class="experience-overlay">
+                                    <h4>Safari Adventures</h4>
+                                    <p>Wildlife and nature experiences</p>
+                                    <button class="btn btn-outline btn-small">View Gallery</button>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <img src="client.jpg" alt="Cultural tour" class="experience-img">
+                                <div class="experience-overlay">
+                                    <h4>Cultural Tours</h4>
+                                    <p>Heritage and tradition</p>
+                                    <button class="btn btn-outline btn-small">View Gallery</button>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <img src="fgpa.JPG" alt="Business travel" class="experience-img">
+                                <div class="experience-overlay">
+                                    <h4>Business Travel</h4>
+                                    <p>Corporate solutions</p>
+                                    <button class="btn btn-outline btn-small">View Gallery</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-info">
+                            <h3>Travel Experiences</h3>
+                            <p>Explore our diverse range of travel experiences from beach vacations to cultural adventures.</p>
+                            <div class="media-meta">
+                                <span class="experiences">4 Categories</span>
+                                <span class="photos">50+ Photos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="media-cta fade-in-up delay-5">
+                    <a href="gallery.html" class="btn btn-primary btn-large">View Full Gallery</a>
+                    <a href="#" class="btn btn-outline btn-large">Subscribe to Our Channel</a>
                 </div>
             </div>
         </div>
