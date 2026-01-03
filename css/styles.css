@@ -1623,12 +1623,12 @@ body::after {
 
 .nav-item {
   position: relative;
-  margin-left: var(--space-8);
+  margin-left: var(--space-3);
 }
 
 .nav-link {
   font-weight: var(--font-medium);
-  font-size: var(--font-sm);
+  font-size: var(--font-xs);
   color: var(--text-primary);
   padding: var(--space-3) var(--space-4);
   display: flex;
