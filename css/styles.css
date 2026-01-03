@@ -1628,6 +1628,7 @@ body::after {
 
 .nav-link {
   font-weight: var(--font-medium);
+  font-size: var(--font-sm);
   color: var(--text-primary);
   padding: var(--space-3) var(--space-4);
   display: flex;
