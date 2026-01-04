@@ -150,7 +150,7 @@ body {
 /* Animated Background Particles */
 body::before {
   content: '';
-  position: fixed;
+  position: fixed; top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -539,7 +539,7 @@ video {
 
 /* Floating Action Button */
 .btn-fab {
-  position: fixed;
+  position: fixed; top: 0;
   bottom: 30px;
   right: 30px;
   width: 70px;
@@ -643,7 +643,7 @@ video {
 /* Advanced Background Patterns */
 body::after {
   content: '';
-  position: fixed;
+  position: fixed; top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -862,7 +862,7 @@ body::after {
 
 /* Floating Action Button Ultra */
 .btn-fab-ultra {
-  position: fixed;
+  position: fixed; top: 0;
   bottom: 40px;
   right: 40px;
   width: 80px;
@@ -1555,7 +1555,7 @@ body::after {
    ============================================== */
 
 .navbar {
-  position: fixed;
+  position: fixed; top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -4637,7 +4637,7 @@ body::after {
 
 /* Modern Lightbox Styles */
 .lightbox {
-  position: fixed;
+  position: fixed; top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -8343,7 +8343,7 @@ body::after {
   }
 
   .nav-menu {
-    position: fixed;
+    position: fixed; top: 0;
     left: -100%;
     top: 140px;
     flex-direction: column;
@@ -8774,7 +8774,7 @@ body::after {
 
 /* Enhanced Modal Styles */
 .modal {
-  position: fixed;
+  position: fixed; top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -9014,7 +9014,7 @@ body::after {
 
 /* Modern Scroll-to-Top Button */
 .scroll-to-top {
-  position: fixed;
+  position: fixed; top: 0;
   bottom: 30px;
   right: 100px;
   width: 60px;
@@ -9057,7 +9057,7 @@ body::after {
    ============================================== */
 
 .whatsapp-chat {
-  position: fixed;
+  position: fixed; top: 0;
   bottom: 30px;
   right: 30px;
   width: 70px;
